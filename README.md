@@ -42,9 +42,6 @@ var currentWindow = require('electron').remote.getCurrentWindow();
 forceFocus.focusWindow(currentWindow);
 ```
 
-Tests
------
-
 Contribute
 ----------
 
