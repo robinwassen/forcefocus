@@ -1,0 +1,6 @@
+{
+  "name": "force-focus-example",
+  "version": "1.0.0",
+  "description": "An example application to demonstrate force focus",
+  "main": "main.js"
+}

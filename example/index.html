@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>forcefocus example</title>
+  </head>
+  <body>
+    <h1>forcefocus example</h1>
+    <p>Application to test and demonstrate the forcefocus module.</p>
+    <button id="focusButton">Focus this Window after 5 seconds</button>
+    <p id="focusMessage"></p>
+
+    <h2>Input field</h2>
+    <p>To test that field focus is regained when the application is focused if it had focus when the window was blurred.</p>
+    <input type="text" />
+
+    <script>
+      (function() {
+        const forceFocus = require('../lib/forcefocus.js');
+        const electron = require('electron');
+        const currentWindow = electron.remote.getCurrentWindow();
+
+        const focusButton = document.getElementById("focusButton");
+        const focusMessage = document.getElementById("focusMessage");
+
+        focusButton.onclick = function() {
+          focusMessage.innerText = "Will force focus this window in 5 seconds. Focus something else."
+          setTimeout(function() {
+            focusMessage.innerText = "Focused this window."
+            forceFocus.focusWindow(currentWindow);
+          }, 5000);
+        };
+      }());
+    </script>
+  </body>
+</html>
