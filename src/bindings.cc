@@ -20,8 +20,6 @@
 #include "./forcefocus.h"
 
 namespace bindings {
-  using std::string;
-
   using v8::Boolean;
   using v8::Exception;
   using v8::FunctionCallbackInfo;
