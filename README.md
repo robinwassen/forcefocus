@@ -5,6 +5,12 @@ forcefocus
 
 > Node module that allows you to steal focus from other windows in Windows.
 
+![npm](https://img.shields.io/npm/dw/forcefocus.svg)
+![NpmVersion](https://img.shields.io/npm/v/npm.svg)
+![NpmLicense](https://img.shields.io/npm/l/forcefocus.svg)
+![AppVeyor branch](https://img.shields.io/appveyor/ci/robinwassen/forcefocus/master.svg?logo=appveyor)
+
+
 Microsoft changed the implementation of [SetFocus()](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646312(v=vs.85).aspx) to only allow an app to grant focus to other windows if it currenly holds the focus. If an app that does not have the focus tries to take it, the taskbar will just flash rather than focusing the window. These changes was probably done to improve the user experience so users would not be distrubed by the focused application suddenly switching.
 
 This module circumvents the restrictions in SetFocus() and allows any window to steal the focus.
