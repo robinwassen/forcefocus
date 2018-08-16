@@ -1,6 +1,6 @@
 {
   "name": "forcefocus",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Node module that allows you to steal focus from other windows in Windows.",
   "main": "lib/forcefocus.js",
   "homepage": "https://github.com/robinwassen/forcefocus",
