@@ -26,6 +26,8 @@ Install `forcefocus` by running:
 $ npm install --save forcefocus
 ```
 
+Native binaries for win, mac and linux are prebuilt and downloaded when the module is installed.
+
 Documentation
 -------------
 
@@ -46,6 +48,15 @@ var forceFocus = require('forcefocus');
 var currentWindow = require('electron').remote.getCurrentWindow();
 
 forceFocus.focusWindow(currentWindow);
+```
+
+Example application
+-------------
+
+An example application is located in the `/example/` dir, start it by running:
+
+```sh
+$ npm run example
 ```
 
 Contribute
