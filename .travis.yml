@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+  - 10
+  - 8
+  - 6
+  - 4
+os:
+  - linux
+  - osx
+before_install:
+  - pip install --user cpplint
+script:
+  - npm run lint
+compiler: clang-4.0
+env:
+  global:
+    - CCACHE_TEMPDIR=/tmp/.ccache-temp
+    - CCACHE_COMPRESS=1
+    - CC="clang"
+    - CXX="clang++"
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++-5-dev
+notifications:
+  email: false
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: ./scripts/prebuild-publish.sh
+  on:
+    node: 10
+    tags: true
+    branch: master
