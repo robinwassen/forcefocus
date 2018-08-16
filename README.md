@@ -9,7 +9,7 @@ forcefocus
 [![NpmVersion](https://img.shields.io/npm/v/forcefocus.svg)](https://npmjs.com/package/forcefocus)
 [![NpmLicense](https://img.shields.io/npm/l/forcefocus.svg)](https://npmjs.com/package/forcefocus)
 [![AppVeyor branch](https://img.shields.io/appveyor/ci/robinwassen/forcefocus/master.svg?logo=appveyor)](https://ci.appveyor.com/project/robinwassen/forcefocus)
-[![Travis (.org) branch](https://img.shields.io/travis/USER/REPO/BRANCH.svg)](https://travis-ci.org/robinwassen/forcefocus)
+[![Travis (.org) branch](https://img.shields.io/travis/USER/REPO/BRANCH.svg?logo=travis)](https://travis-ci.org/robinwassen/forcefocus)
 
 Microsoft changed the implementation of [SetFocus()](https://msdn.microsoft.com/en-us/library/windows/desktop/ms646312(v=vs.85).aspx) to only allow an app to grant focus to other windows if it currenly holds the focus. If an app that does not have the focus tries to take it, the taskbar will just flash rather than focusing the window. These changes was probably done to improve the user experience, so users would not be disturbed by the focused application suddenly switching.
 
@@ -32,15 +32,15 @@ Documentation
 <a name="module_forcefocus.focusWindow"></a>
 
 ### forcefocus.focusWindow(window)
-**Kind**: static method of [<code>forcefocus</code>](#module_forcefocus)
-**Summary**: Force focus on a Window
-**Access**: public
+**Kind**: static method of [<code>forcefocus</code>](#module_forcefocus)  
+**Summary**: Force focus on a Window  
+**Access**: public  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | window | <code>BrowserWindow</code> | Window to focus |
 
-**Example**
+**Example**  
 ```js
 var forceFocus = require('forcefocus');
 var currentWindow = require('electron').remote.getCurrentWindow();
