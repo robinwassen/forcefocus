@@ -16,8 +16,6 @@
 
 #include "./forcefocus.h"
 
-#include <windows.h>
-
 namespace forcefocus {
   void FocusWindow(unsigned char* windowHandleBuffer) {}
 }  // namespace forcefocus
