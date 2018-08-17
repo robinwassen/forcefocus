@@ -53,6 +53,8 @@ forceFocus.focusWindow(currentWindow);
 Example application
 -------------
 
+![Example application gif](./media/forcefocus-example.gif)
+
 An example application is located in the `/example/` dir, start it by running:
 
 ```sh
