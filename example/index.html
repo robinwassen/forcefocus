@@ -3,17 +3,63 @@
   <head>
     <meta charset="UTF-8">
     <title>forcefocus example</title>
+    <style>
+      body {
+        padding: 10px 20px;
+        color: #EEE;
+        background-color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      h1, h2 {
+        margin: 0 0 10px;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      button {
+        background-color: transparent;
+        color: #52dac2;
+        border: 2px solid #52dac2;
+        border-radius: 10px;
+        padding: 5px 30px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: #60ffe3;
+        border-color: #60ffe3;
+      }
+
+      .button_container {
+        padding: 30px 0px;
+      }
+
+      input[type="text"] {
+        padding: 5px 10px;
+      }
+
+      input[type="text"]:focus {
+        outline-color: #52dac2;
+        outline-style: solid;
+        outline-width: 2px;
+      }
+    </style>
   </head>
   <body>
     <h1>forcefocus example</h1>
-    <p>Application to test and demonstrate the forcefocus module.</p>
-    <button id="focusButton">Focus this Window after 5 seconds</button>
-    <p id="focusMessage"></p>
+    <div class="button_container">
+        <button id="focusButton">Focus this window</button>
+        <p id="focusMessage"></p>
+    </div>
 
     <h2>Input field</h2>
-    <p>To test that field focus is regained when the application is focused if it had focus when the window was blurred.</p>
+    <p>Test that field focus is regained when the application is focused, if it had focus when the window was blurred.</p>
     <input type="text" />
-
     <script>
       (function() {
         const forceFocus = require('..');
