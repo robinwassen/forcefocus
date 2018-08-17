@@ -44,8 +44,8 @@ Documentation
 
 **Example**  
 ```js
-var forceFocus = require('forcefocus');
-var currentWindow = require('electron').remote.getCurrentWindow();
+const forceFocus = require('forcefocus');
+const currentWindow = require('electron').remote.getCurrentWindow();
 
 forceFocus.focusWindow(currentWindow);
 ```
