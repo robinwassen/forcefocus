@@ -29,6 +29,7 @@ namespace bindings {
   using v8::Object;
   using v8::String;
   using v8::Value;
+  using v8::NewStringType;
 
   using forcefocus::FocusWindow;
 
@@ -37,17 +38,28 @@ namespace bindings {
     HandleScope scope(isolate);
 
     if (args.Length() < 1) {
-      isolate->ThrowException(Exception::TypeError(String::NewFromUtf8(isolate, "Expected one argument")));
-      return;
-    }
-
-    if (!args[0]->IsObject()) {
-      Local<String> message = String::NewFromUtf8(isolate, "Expected first argument to be a window handle buffer");
+      Local<String> message = String::NewFromUtf8(
+                                  isolate,
+                                  "Expected one argument",
+                                  NewStringType::kNormal)
+                                  .ToLocalChecked();
       isolate->ThrowException(Exception::TypeError(message));
       return;
     }
 
-    unsigned char* windowHandleBuffer = (unsigned char*)node::Buffer::Data(args[0]->ToObject());
+    if (!args[0]->IsObject()) {
+      Local<String> message = String::NewFromUtf8(
+                                  isolate,
+                                  "Expected first argument to be a window handle buffer",
+                                  NewStringType::kNormal)
+                                  .ToLocalChecked();
+      isolate->ThrowException(Exception::TypeError(message));
+      return;
+    }
+
+    auto context = isolate->GetCurrentContext();
+    unsigned char *windowHandleBuffer = (unsigned char *)node::Buffer::Data(
+        args[0]->ToObject(context).ToLocalChecked());
 
     FocusWindow(windowHandleBuffer);
   }
