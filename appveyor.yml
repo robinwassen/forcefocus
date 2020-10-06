@@ -15,6 +15,10 @@ environment:
     secure: f+0cd8hOyzzcyBfUzfAudD5r9BYd7SbCLQSO+HPgRs76El3EO2+GkOxaxbd5U07/
 
   matrix:
+    - nodejs_version: 14
+    - nodejs_version: 13
+    - nodejs_version: 12
+    - nodejs_version: 11
     - nodejs_version: 10
     - nodejs_version: 8
     - nodejs_version: 6
