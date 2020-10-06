@@ -35,7 +35,8 @@
     "electron-rebuild": "^1.8.2",
     "eslint": "^4.19.1",
     "jsdoc-to-markdown": "^4.0.1",
-    "prebuild": "^7.6.2"
+    "prebuild": "^10.0.1",
+    "node-abi": "^2.19.1"
   },
   "dependencies": {
     "bindings": "^1.3.0",
