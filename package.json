@@ -23,7 +23,7 @@
     "rebuild": "node-gyp rebuild",
     "rebuild-electron": "electron-rebuild -f",
     "install": "prebuild-install || node-gyp rebuild",
-    "prebuild-release": "prebuild --all --strip"
+    "prebuild-release": "prebuild --strip"
   },
   "author": "Robin Andersson <me@robinwassen.com>",
   "license": "Apache-2.0",
