@@ -38,5 +38,5 @@ deploy:
   provider: script
   script: ./scripts/prebuild-publish.sh
   on:
-    tags: true
+#    tags: true
     branch: master
