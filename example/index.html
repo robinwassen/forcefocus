@@ -62,10 +62,6 @@
     <input type="text" />
     <script>
       (function() {
-        const forceFocus = require('..');
-        const electron = require('electron');
-        const currentWindow = electron.remote.getCurrentWindow();
-
         const focusButton = document.getElementById("focusButton");
         const focusMessage = document.getElementById("focusMessage");
 
@@ -73,7 +69,7 @@
           focusMessage.innerText = "Will force focus this window in 5 seconds. Focus something else."
           setTimeout(function() {
             focusMessage.innerText = "Focused this window."
-            forceFocus.focusWindow(currentWindow);
+            window.forcefocus.focusWindow();
           }, 5000);
         };
       }());

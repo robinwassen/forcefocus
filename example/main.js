@@ -1,8 +1,9 @@
 'use strict';
 
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const {
+  app, ipcMain, BrowserWindow
+} = require('electron');
+const path = require('path');
 
 let mainWindow;
 
@@ -15,7 +16,15 @@ let mainWindow;
 const createWindow = function() {
   const windowProperties = {
     width: 800,
-    height: 600
+    height: 600,
+    webPreferences: {
+      enableRemoteModule: false,
+      contextIsolation: true,
+      nodeIntegration: false,
+      nativeWindowOpen: true,
+      webSecurity: true,
+      preload: path.join(__dirname, 'preload.js')
+    }
   };
 
   mainWindow = new BrowserWindow(windowProperties);
@@ -38,4 +47,10 @@ app.on('activate', function() {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+const forceFocus = require('..');
+
+ipcMain.handle('force-focus', () => {
+  forceFocus.focusWindow(mainWindow);
 });
