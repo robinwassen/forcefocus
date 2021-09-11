@@ -13,7 +13,6 @@ let mainWindow;
  * @public
  *
  */
-console.log(path.join(__dirname, 'preload.js'));
 const createWindow = function() {
   const windowProperties = {
     width: 800,
