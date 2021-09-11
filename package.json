@@ -15,7 +15,7 @@
     "windows"
   ],
   "scripts": {
-    "lint": "eslint lib && cpplint --linelength=120 --recursive src",
+    "lint": "eslint lib/*.js example/*.js && cpplint --linelength=120 --recursive src",
     "readme": "jsdoc2md --template docs/README.hbs lib/forcefocus.js > README.md",
     "configure": "node-gyp configure",
     "build": "node-gyp rebuild",
